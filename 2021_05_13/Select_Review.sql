@@ -22,3 +22,19 @@ SELECT * FROM userTbl
 
 SELECT userID, name, height FROM userTbl
  WHERE height >= 180 AND birthYear >1970;
+
+--출생년도순(오름차순)으로 정렬해서 조회
+SELECT * FROM userTbl ORDER BY birthYear ASC;
+
+-- SELECT INTO
+-- PK와 같은 KEY정보는 생성 안댐
+SELECT * INTO userTbl_New FROM userTbl;
+
+
+SELECT userID,name,addr INTO userTbl_Backup FROM userTbl
+
+--SELECT * FROM userTbl_Backup;
+SELECT userID,name,addr INTO userTbl_Backup2 FROM userTbl
+ WHERE addr ='서울';
+
+SELECT * FROM userTbl_Backup2;
