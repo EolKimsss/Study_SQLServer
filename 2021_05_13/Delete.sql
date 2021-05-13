@@ -1,0 +1,12 @@
+-- DELETE
+-- WHERE절을 안쓰면 사유서를 쓴다
+
+BEGIN TRAN
+
+DELETE FROM testTbl
+ WHERE Id = 3;
+
+ SELECT * FROM testTbl;
+
+COMMIT;
+ROLLBACK;
