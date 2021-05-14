@@ -10,9 +10,12 @@ AS
 
 
 SELECT 
-	  CASE div
-	  WHEN 0 THEN [제품그룹]
-	  WHEN 1 THEN '총합계' END AS [상품그룹]
+
+      IIF(div = 0, [제품그룹],'총합계') AS [상품그룹2] 
+	 --CASE div
+	 --WHEN 0 THEN [제품그룹]
+	 --WHEN 1 THEN '총합계' END AS [상품그룹]
 	  , [그룹별 구매금액합계]
-	  , div
+	 --, div
 	  FROM cte_summary;
+
