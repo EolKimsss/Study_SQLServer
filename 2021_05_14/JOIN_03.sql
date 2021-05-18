@@ -12,6 +12,29 @@ SELECT u.userID,u.name,b.prodName
  -- 학생 / 동아리/ 가입정보 테이블
  -- OUTERJOIN
 
+
+
+
+
+
+
+
+  SELECT s.Region,s.StdID,s.StdName,
+	     r.RegDate
+   FROM stdTbl AS s
+   RIGHT OUTER JOIN regInfoTbl AS r
+     ON s.StdID = r.StdID
+
+
+
+
+
+
+
+
+
+
+-- 1
  SELECT s.Region,s.StdID,s.StdName,
 	    c.ClubName, r.RegDate, c.ClubRoom
    FROM stdTbl AS s
@@ -20,7 +43,7 @@ SELECT u.userID,u.name,b.prodName
    LEFT OUTER JOIN clubTbl AS c
      ON c.ClubName = r.ClubName
 
-
+-- 2 
 SELECT c.ClubName,c.ClubRoom,r.id,r.StdID,r.RegDate
   FROM clubTbl AS c
   LEFT OUTER JOIN reginfoTbl AS r
